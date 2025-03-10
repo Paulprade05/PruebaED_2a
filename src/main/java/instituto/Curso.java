@@ -7,8 +7,8 @@ package instituto;
 import java.util.TreeSet;
 
 /**
- *
- * @author ProfDiurno
+ * Clase que representa el curso en un instituto
+ * @author Paul
  */
 public class Curso {
 
@@ -23,7 +23,11 @@ public class Curso {
         this.nombre = nombre;
         listaAlumnos = new TreeSet<>();
     }
-
+    /**
+     * Metodo que sobreescribe el metodo toString para poder funcionar 
+     * con objetos de tipo Curso
+     * @return String 
+     */
     @Override
     public String toString() {
         String s = "--------------------" + nombre + "-----------------\n";
@@ -34,7 +38,10 @@ public class Curso {
         }
         return s;
     }
-
+    /**
+     * Metodo que añade un alumno nuevo a la lista de alumnos del curso
+     * @param p de tipo Persona
+     */
     public void aniadirAlumno(Persona p) {
         listaAlumnos.add(p);
     }
