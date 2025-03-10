@@ -8,6 +8,12 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
 
+/**
+ * Clase que representa un curso en el instituto
+ *
+ * @author Paul
+ *
+ */
 public class Persona implements Comparable<Persona> {
 
     private Nif nif;
@@ -72,6 +78,11 @@ public class Persona implements Comparable<Persona> {
         return Period.between(nacimiento, LocalDate.now()).getYears();
     }
 
+    /**
+     * Metodo que sobreescribe el metodo toString para poder usarlo con objetos
+     * de tipo Persona
+     *
+     */
     @Override
     public String toString() {
         if (nombre.split(" ").length > 1) {
@@ -82,6 +93,13 @@ public class Persona implements Comparable<Persona> {
         }
     }
 
+    /**
+     * Metodo que sobreescribe el metodo equals para poder usarlo con objetos de
+     * tipo Persona
+     *
+     * @param a se refiere a un objeto de tipo Persona
+     *
+     */
     public boolean equals(Persona a) {
         if (a == null) {
             return false;
@@ -89,6 +107,13 @@ public class Persona implements Comparable<Persona> {
         return a.nif.toString().equals(this.nif.toString());
     }
 
+    /**
+     * Metodo que sobreescribe el metodo equals para poder usarlo con cualquier
+     * tipo de objetos
+     *
+     * @param obj se le pasa un objeto de cualquier tipo
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -105,6 +130,13 @@ public class Persona implements Comparable<Persona> {
         return Objects.equals(this.nif, other.nif);
     }
 
+    /**
+     * Metodo que sobreescribe el metodo compareTo para poder comparar 2 objetos
+     * de tipo persona
+     *
+     * @param o hace referencia a un objeto de tipo Persona
+     * @return
+     */
     @Override
     public int compareTo(Persona o) {
         return this.nif.toString().compareTo(o.nif.toString());
