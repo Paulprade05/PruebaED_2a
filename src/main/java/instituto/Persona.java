@@ -9,7 +9,7 @@ import java.time.Period;
 import java.util.Objects;
 
 /**
- * Clase que representa un curso en el instituto
+ * Clase que representa una Persona en el instituto
  *
  * @author Paul
  *
@@ -45,35 +45,59 @@ public class Persona implements Comparable<Persona> {
     public Nif getNif() {
         return nif;
     }
-
+    /**
+     * Setter del nif de la persona
+     * @param nif Nif
+     */
     public void setNif(Nif nif) {
         this.nif = nif;
     }
-
+    /**
+     * Getter del nombre de la persona
+     * @return String
+     */
     public String getNombre() {
         return nombre;
     }
-
+    /**
+     * Setter del nombre de la persona
+     * @param nombre String
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    /**
+     * Getter del genero de la persona 
+     * @return char
+     */
     public char getGenero() {
         return genero;
     }
-
+    /**
+     * Setter del genero de la persona
+     * @param genero se le debe pasar un caracter
+     */
     public void setGenero(char genero) {
         this.genero = genero;
     }
-
+    /**
+     * 
+     * @return la fecha de nacimiento como LocalDate
+     */
     public LocalDate getNacimiento() {
         return nacimiento;
     }
-
+    /**
+     * Un set para la fecha de nacimiento de la persona
+     * @param nacimiento se le pasa un LocalDate
+     */
     public void setNacimiento(LocalDate nacimiento) {
         this.nacimiento = nacimiento;
     }
-
+    /**
+     * 
+     * @return un int de la edad de la persona
+     */
     public int getEdad() {
         return Period.between(nacimiento, LocalDate.now()).getYears();
     }
