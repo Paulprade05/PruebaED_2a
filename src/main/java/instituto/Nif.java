@@ -5,8 +5,8 @@
 package instituto;
 
 /**
- *
- * @author ProfDiurno
+ * Clase que representa el Nif de una persona
+ * @author Paul
  */
 public class Nif {
 
@@ -32,17 +32,28 @@ public class Nif {
         this.numero = numero;
         this.letra = calcularLetra(numero);
     }
-
+    /**
+     * Metodo que sobreescribe el metodo toString para poder usarse con Nif, 
+     * devuelve el numero, un guion y la letra
+     * @return String
+     */
     @Override
     public String toString() {
         return numero + "-" + letra;
     }
-
+    /**
+     * Metodo que sirve para setear un Nif pidiendo un numero y calculando su letra
+     * @param numero de tipo int
+     */
     protected void setNif(int numero) {
         this.numero = numero;
         this.letra = calcularLetra(numero);
     }
-
+    /**
+     * Metodo que sobreescribe el metodo equals 
+     * @param obj recibe cualquier tipo de objeto
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
